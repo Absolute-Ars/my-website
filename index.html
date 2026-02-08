@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кнопки-ссылки</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #222;
+            color: white;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+        button:hover {
+            transform: scale(1.1);
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Выберите сайт</h1>
+
+    <button onclick="openSite('https://www.google.com')">Google</button>
+    <button onclick="openSite('https://www.youtube.com')">YouTube</button>
+    <button onclick="openSite('https://www.wikipedia.org')">Wikipedia</button>
+
+    <script>
+        function openSite(url) {
+            // Открывает сайт в новой вкладке
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+</html>
