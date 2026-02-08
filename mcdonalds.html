@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Меню Макдональдс</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('https://i.pinimg.com/736x/df/d8/d5/dfd8d523c853aace9cda8f795c82ea1f.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 20px;
+      text-shadow: 2px 2px 5px #000;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0;
+      gap: 20px;
+    }
+
+    .menu button {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      color: #fff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .menu button:hover {
+      background-color: rgba(255, 165, 0, 0.8);
+    }
+
+    #food-image {
+      margin-top: 30px;
+      max-width: 300px;
+      width: 90%;
+      border: 5px solid #fff;
+      border-radius: 15px;
+      display: none;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .price {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+      color: #ffd700;
+    }
+
+    @media (max-width: 600px) {
+      .menu {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .menu button {
+        font-size: 14px;
+        padding: 10px 15px;
+      }
+
+      #food-image {
+        max-width: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Меню Макдональдс</h1>
+
+  <div class="menu">
+    <button onclick="showFood('Биг Мак Сет', 250, 'https://i.pinimg.com/736x/a8/c5/cf/a8c5cfe707b94730052ac2ef5be63850.jpg')">
+      Биг Мак Сет <span class="price">250 грн</span>
+    </button>
+    <button onclick="showFood('Чикен Макнаггетс Сет', 220, 'https://i.pinimg.com/736x/e2/bd/b0/e2bdb03f3f1530e4c13e674c2056c140.jpg')">
+      Чикен Макнаггетс Сет <span class="price">220 грн</span>
+    </button>
+    <button onclick="showFood('Дабл Чизбургер Сет', 200, 'https://i.pinimg.com/736x/ec/f9/96/ecf9961c815d56a566100f893764a9b8.jpg')">
+      Дабл Чизбургер Сет <span class="price">200 грн</span>
+    </button>
+    <button onclick="showFood('Филе-О-Фиш Сет', 240, 'https://i.pinimg.com/736x/29/6f/b1/296fb1e94d602cb61cf0904cde246e8a.jpg')">
+      Филе-О-Фиш Сет <span class="price">240 грн</span>
+    </button>
+    <button onclick="showFood('МакЧикен Сет', 230, 'https://i.pinimg.com/736x/5c/57/6d/5c576dd9ce8709ee83639a32c9e8d42b.jpg')">
+      МакЧикен Сет <span class="price">230 грн</span>
+    </button>
+    <button onclick="showFood('Гамбургер Сет', 180, 'https://i.pinimg.com/736x/19/8c/0d/198c0dea684f1f50fe0b9bd638848610.jpg')">
+      Гамбургер Сет <span class="price">180 грн</span>
+    </button>
+    <button onclick="showFood('Куриный Стрипс Сет', 210, 'https://i.pinimg.com/736x/8a/f2/76/8af27631223b92ca0ef21e531845474c.jpg')">
+      Куриный Стрипс Сет <span class="price">210 грн</span>
+    </button>
+  </div>
+
+  <img id="food-image" src="" alt="Фото сета">
+
+  <script>
+    function showFood(name, price, imgSrc) {
+      const img = document.getElementById('food-image');
+      img.src = imgSrc;
+      img.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
