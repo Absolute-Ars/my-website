@@ -50,47 +50,14 @@
         background: linear-gradient(90deg, #ffcc61, #ff6f61);
     }
 
-    /* Кнопки по углам */
+    /* Кнопки по углам для ПК */
     #btn1 { top: 20px; left: 20px; }
     #btn2 { top: 20px; right: 20px; }
     #btn3 { bottom: 20px; left: 20px; }
     #btn4 { bottom: 20px; right: 20px; }
 
-    /* Изображения сбоку */
-    #leftImg, #rightImg {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        max-height: 80%;
-        max-width: 35%;
-    }
-
-    #leftImg { left: 0; }
-    #rightImg { right: 0; }
-
-    /* Адаптация для планшетов и мобильных через media queries */
-    @media (max-width: 1024px) {
-        #leftImg, #rightImg {
-            max-height: 70%;
-            max-width: 30%;
-        }
-
-        button {
-            padding: 18px 30px;
-            font-size: 18px;
-        }
-
-        h1 {
-            font-size: 36px;
-        }
-    }
-
+    /* Адаптация для планшетов */
     @media (max-width: 768px) {
-        #leftImg, #rightImg {
-            max-height: 60%;
-            max-width: 25%;
-        }
-
         button {
             padding: 15px 25px;
             font-size: 16px;
@@ -102,17 +69,18 @@
         }
     }
 
+    /* Адаптация для телефонов */
     @media (max-width: 480px) {
-        /* Убираем картинки на маленьких телефонах */
-        #leftImg, #rightImg {
-            display: none;
-        }
+        /* Кнопки меньше и подальше друг от друга */
+        #btn1 { top: 10%; left: 50%; transform: translateX(-50%); position: relative; display: block; margin: 0 auto 15px auto; }
+        #btn2 { top: 0; left: 50%; transform: translateX(-50%); position: relative; display: block; margin: 0 auto 15px auto; }
+        #btn3 { top: 0; left: 50%; transform: translateX(-50%); position: relative; display: block; margin: 0 auto 15px auto; }
+        #btn4 { top: 0; left: 50%; transform: translateX(-50%); position: relative; display: block; margin: 0 auto; }
 
-        /* Кнопки по углам с увеличенной шириной */
         button {
-            padding: 12px 20px;
-            font-size: 5vw;
-            max-width: 90%;
+            padding: 12px 18px;
+            font-size: 4.5vw;
+            max-width: 80%;
         }
 
         h1 {
@@ -123,10 +91,6 @@
 </style>
 </head>
 <body>
-
-    <!-- Картинки сбоку -->
-    <img id="leftImg" src="https://i.pinimg.com/1200x/92/bb/23/92bb2328488d30f59df3eef4ecdefe9d.jpg" alt="Слева">
-    <img id="rightImg" src="https://i.pinimg.com/1200x/f1/18/7e/f1187ef1d3baff7577856f2f33ddea09.jpg" alt="Справа">
 
     <!-- Центрированный текст -->
     <h1>Выбирай свой путь</h1>
