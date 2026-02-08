@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Аниме: Выбирай свой путь</title>
 <style>
+    /* Общие стили */
     body {
         margin: 0;
         padding: 0;
@@ -24,16 +25,16 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 5vw; /* масштабируется под экран */
-        text-shadow: 2px 2px 4px #000;
+        font-size: 48px;
+        text-shadow: 3px 3px 6px #000;
         text-align: center;
-        padding: 0 10px; /* отступы для маленьких экранов */
+        padding: 0 10px;
     }
 
     button {
         position: absolute;
-        padding: 15px 25px;
-        font-size: 3vw; /* адаптивный размер текста */
+        padding: 20px 40px;
+        font-size: 20px;
         border: none;
         border-radius: 12px;
         cursor: pointer;
@@ -45,15 +46,15 @@
     }
 
     button:hover {
-        transform: scale(1.05);
+        transform: scale(1.1);
         background: linear-gradient(90deg, #ffcc61, #ff6f61);
     }
 
     /* Кнопки по углам */
-    #btn1 { top: 10px; left: 5%; }
-    #btn2 { top: 10px; right: 5%; }
-    #btn3 { bottom: 10px; left: 5%; }
-    #btn4 { bottom: 10px; right: 5%; }
+    #btn1 { top: 20px; left: 20px; }
+    #btn2 { top: 20px; right: 20px; }
+    #btn3 { bottom: 20px; left: 20px; }
+    #btn4 { bottom: 20px; right: 20px; }
 
     /* Изображения сбоку */
     #leftImg, #rightImg {
@@ -67,7 +68,23 @@
     #leftImg { left: 0; }
     #rightImg { right: 0; }
 
-    /* Адаптация для маленьких экранов */
+    /* Адаптация для планшетов и мобильных через media queries */
+    @media (max-width: 1024px) {
+        #leftImg, #rightImg {
+            max-height: 70%;
+            max-width: 30%;
+        }
+
+        button {
+            padding: 18px 30px;
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 36px;
+        }
+    }
+
     @media (max-width: 768px) {
         #leftImg, #rightImg {
             max-height: 60%;
@@ -75,23 +92,25 @@
         }
 
         button {
-            padding: 12px 18px;
-            font-size: 4vw;
+            padding: 15px 25px;
+            font-size: 16px;
             max-width: 45%;
         }
 
         h1 {
-            font-size: 7vw;
+            font-size: 5vw;
         }
     }
 
     @media (max-width: 480px) {
+        /* Убираем картинки на маленьких телефонах */
         #leftImg, #rightImg {
-            display: none; /* убираем картинки, чтобы не мешали */
+            display: none;
         }
 
+        /* Кнопки по углам с увеличенной шириной */
         button {
-            padding: 10px 15px;
+            padding: 12px 20px;
             font-size: 5vw;
             max-width: 90%;
         }
@@ -105,12 +124,14 @@
 </head>
 <body>
 
-    <!-- Изображения сбоку -->
+    <!-- Картинки сбоку -->
     <img id="leftImg" src="https://i.pinimg.com/1200x/92/bb/23/92bb2328488d30f59df3eef4ecdefe9d.jpg" alt="Слева">
     <img id="rightImg" src="https://i.pinimg.com/1200x/f1/18/7e/f1187ef1d3baff7577856f2f33ddea09.jpg" alt="Справа">
 
+    <!-- Центрированный текст -->
     <h1>Выбирай свой путь</h1>
 
+    <!-- Кнопки с цитатами -->
     <button id="btn1" onclick="openSite('https://ru.wikipedia.org/wiki/%D0%93%D1%83%D1%80%D0%B5%D0%BD-Лаганн')">
         «Сверни это небо!» – Гуррен Лаганн
     </button>
@@ -125,9 +146,9 @@
     </button>
 
 <script>
-    function openSite(url) {
-        window.open(url, '_blank');
-    }
+function openSite(url) {
+    window.open(url, '_blank');
+}
 </script>
 
 </body>
