@@ -8,14 +8,14 @@
     body {
         margin: 0;
         padding: 0;
-        height: 100vh;
         font-family: Arial, sans-serif;
         color: #fff;
-        background-image: url('https://i.pinimg.com/736x/9f/59/43/9f59435406d0d6fe23d96918ba45f37e.jpg'); /* фон врата */
+        background-image: url('https://i.pinimg.com/736x/9f/59/43/9f59435406d0d6fe23d96918ba45f37e.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
+        min-height: 100vh;
         overflow: hidden;
     }
 
@@ -24,50 +24,83 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 48px;
-        text-shadow: 3px 3px 6px #000;
+        font-size: 5vw; /* масштабируется под экран */
+        text-shadow: 2px 2px 4px #000;
         text-align: center;
+        padding: 0 10px; /* отступы для маленьких экранов */
     }
 
     button {
         position: absolute;
-        padding: 20px 40px;
-        font-size: 20px;
+        padding: 15px 25px;
+        font-size: 3vw; /* адаптивный размер текста */
         border: none;
         border-radius: 12px;
         cursor: pointer;
         background: linear-gradient(90deg, #ff6f61, #ffcc61);
         color: #1e1e1e;
         transition: transform 0.2s, background 0.3s;
+        max-width: 40%;
+        word-wrap: break-word;
     }
 
     button:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
         background: linear-gradient(90deg, #ffcc61, #ff6f61);
     }
 
     /* Кнопки по углам */
-    #btn1 { top: 20px; left: 20px; }
-    #btn2 { top: 20px; right: 20px; }
-    #btn3 { bottom: 20px; left: 20px; }
-    #btn4 { bottom: 20px; right: 20px; }
+    #btn1 { top: 10px; left: 5%; }
+    #btn2 { top: 10px; right: 5%; }
+    #btn3 { bottom: 10px; left: 5%; }
+    #btn4 { bottom: 10px; right: 5%; }
 
     /* Изображения сбоку */
-    #leftImg {
+    #leftImg, #rightImg {
         position: absolute;
-        left: 0;
         top: 50%;
         transform: translateY(-50%);
-        height: 80%; /* масштабируем по высоте */
+        max-height: 80%;
+        max-width: 35%;
     }
 
-    #rightImg {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        height: 80%;
+    #leftImg { left: 0; }
+    #rightImg { right: 0; }
+
+    /* Адаптация для маленьких экранов */
+    @media (max-width: 768px) {
+        #leftImg, #rightImg {
+            max-height: 60%;
+            max-width: 25%;
+        }
+
+        button {
+            padding: 12px 18px;
+            font-size: 4vw;
+            max-width: 45%;
+        }
+
+        h1 {
+            font-size: 7vw;
+        }
     }
+
+    @media (max-width: 480px) {
+        #leftImg, #rightImg {
+            display: none; /* убираем картинки, чтобы не мешали */
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 5vw;
+            max-width: 90%;
+        }
+
+        h1 {
+            font-size: 8vw;
+        }
+    }
+
 </style>
 </head>
 <body>
