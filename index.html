@@ -1,48 +1,101 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кнопки-ссылки</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #222;
-            color: white;
-        }
-        button {
-            padding: 15px 30px;
-            margin: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 8px;
-            background-color: #4CAF50;
-            color: white;
-            transition: transform 0.2s, background-color 0.3s;
-        }
-        button:hover {
-            transform: scale(1.1);
-            background-color: #45a049;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Аниме: Выбирай свой путь</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        color: #fff;
+        background-image: url('https://i.pinimg.com/736x/9f/59/43/9f59435406d0d6fe23d96918ba45f37e.jpg'); /* фон врата */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+    }
+
+    h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 48px;
+        text-shadow: 3px 3px 6px #000;
+        text-align: center;
+    }
+
+    button {
+        position: absolute;
+        padding: 20px 40px;
+        font-size: 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        background: linear-gradient(90deg, #ff6f61, #ffcc61);
+        color: #1e1e1e;
+        transition: transform 0.2s, background 0.3s;
+    }
+
+    button:hover {
+        transform: scale(1.1);
+        background: linear-gradient(90deg, #ffcc61, #ff6f61);
+    }
+
+    /* Кнопки по углам */
+    #btn1 { top: 20px; left: 20px; }
+    #btn2 { top: 20px; right: 20px; }
+    #btn3 { bottom: 20px; left: 20px; }
+    #btn4 { bottom: 20px; right: 20px; }
+
+    /* Изображения сбоку */
+    #leftImg {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 80%; /* масштабируем по высоте */
+    }
+
+    #rightImg {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 80%;
+    }
+</style>
 </head>
 <body>
 
-    <h1>Выберите сайт</h1>
+    <!-- Изображения сбоку -->
+    <img id="leftImg" src="https://i.pinimg.com/1200x/92/bb/23/92bb2328488d30f59df3eef4ecdefe9d.jpg" alt="Слева">
+    <img id="rightImg" src="https://i.pinimg.com/1200x/f1/18/7e/f1187ef1d3baff7577856f2f33ddea09.jpg" alt="Справа">
 
-    <button onclick="openSite('https://www.google.com')">Google</button>
-    <button onclick="openSite('https://www.youtube.com')">YouTube</button>
-    <button onclick="openSite('https://www.wikipedia.org')">Wikipedia</button>
+    <h1>Выбирай свой путь</h1>
 
-    <script>
-        function openSite(url) {
-            // Открывает сайт в новой вкладке
-            window.open(url, '_blank');
-        }
-    </script>
+    <button id="btn1" onclick="openSite('https://ru.wikipedia.org/wiki/%D0%93%D1%83%D1%80%D0%B5%D0%BD-Лаганн')">
+        «Сверни это небо!» – Гуррен Лаганн
+    </button>
+    <button id="btn2" onclick="openSite('https://ru.wikipedia.org/wiki/Code_Geass')">
+        «Я не могу сдаться!» – Code Geass
+    </button>
+    <button id="btn3" onclick="openSite('https://ru.wikipedia.org/wiki/K-On!')">
+        «Музыка делает нас счастливыми!» – K-On!
+    </button>
+    <button id="btn4" onclick="openSite('https://ru.wikipedia.org/wiki/%D0%A3%D0%BC%D0%B5')">
+        «Учись, чтобы жить!» – Уме
+    </button>
+
+<script>
+    function openSite(url) {
+        window.open(url, '_blank');
+    }
+</script>
 
 </body>
 </html>
